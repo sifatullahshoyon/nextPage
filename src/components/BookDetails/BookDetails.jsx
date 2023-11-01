@@ -19,7 +19,7 @@ const BookDetails = () => {
         {/* Image Container */}
         <div className=" lg:w-1/2 h-full">
           <img
-            src={image}
+            src={image ? image : "No Image Found"}
             alt="book cover"
             className="object-cover w-full  lg:h-full"
           />
@@ -28,7 +28,7 @@ const BookDetails = () => {
         <div className=" p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2">
           <p className="badge">Brand new</p>
           <h5 className="mb-3 text-3xl font-lato font-extrabold leading-none sm:text-4xl">
-            {title}
+            {title ? title : "No Data Found"}
           </h5>
           <p className=" text-gray-900 font-lato">
             <span className="font-semibold">Authors: </span>{" "}
@@ -44,7 +44,7 @@ const BookDetails = () => {
           </p>
           <p className=" text-gray-900 font-lato">
             <span className="font-semibold">Rating: </span>{" "}
-            {rating ? rating : "No Data Found"}
+            {rating ? rating : "0"}
           </p>
           <div className="mt-4">
             {fold ? (
