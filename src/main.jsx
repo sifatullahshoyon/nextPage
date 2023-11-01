@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider,} from "react-router-dom";
 import Home from './components/Home/Home.jsx';
 import About from './components/About/About.jsx';
 import Books from './components/Books/Books.jsx';
+import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,10 +20,15 @@ const router = createBrowserRouter([
       {
         path: 'books',
         element: <Books />,
+        loader: () => fetch('https://api.itbook.store/1.0/new'),
       },
       {
         path: 'about',
         element: <About />,
+      },
+      {
+        path: 'loader',
+        element: <LoadingSpinner />,
       },
     ],
   },
